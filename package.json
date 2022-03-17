@@ -1,0 +1,29 @@
+{
+  "name": "socialnetworkapi",
+  "version": "1.0.0",
+  "description": "Mongoose back-end social network api",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed",
+    "heroku-postbuild": "node utils/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcstewart76/SocialNetworkApi.git"
+  },
+  "author": "Chris Stewart",
+  "bugs": {
+    "url": "https://github.com/mcstewart76/SocialNetworkApi/issues"
+  },
+  "homepage": "https://github.com/mcstewart76/SocialNetworkApi#readme"
+}
