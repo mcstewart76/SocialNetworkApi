@@ -1,4 +1,7 @@
-//get all users
+const { User, Thought, Reaction } = require('../models');
+module.exports = {
+    
+ //get all users
 
 // get single user by id
 
@@ -14,4 +17,6 @@
 
 //post to add new friend to user friend list
 
-//delete remove friend from user friend list
+//delete remove friend from user friend list   
+
+}
