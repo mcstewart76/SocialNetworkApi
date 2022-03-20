@@ -4,7 +4,11 @@ const {
 
 } = require('../../controllers/thoughtController');
 
-// api/students
+// api/thoughts/:thoughtId/reactions
+
+//post to create a reaction stored in single thoughts reactions array
+
+//delete to pull and remove reaction by the reactionId value
 
 
 
