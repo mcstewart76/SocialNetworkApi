@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction');
 
 
 // Schema to create User model
@@ -18,10 +19,7 @@ const thoughtSchema = new Schema(
         type: String,
         required: true,
     },
-    reactions: {
-        type: Schema.Types.ObjectId,
-        ref: 'Reaction',
-    }
+    reactions: [reactionSchema]
     
   },
   {
@@ -35,6 +33,6 @@ function dateFormat() {
     
 }
 
-const Thought = model('Thought', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
