@@ -14,16 +14,20 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+      match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
     },
-    thoughts: {
+    thoughts: [{
         type: Schema.Types.ObjectId,
         ref: 'thought',
-    },
-    friends: {
+    }
+  ],
+    friends: [
+    {
         type: Schema.Types.ObjectId,
         ref: 'user',
     }
+
+    ],
     
   },
   {
@@ -34,8 +38,8 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.virtual('commentCount').get(function () {
-  return this.comments.length;
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
 });
 
 const User = model('user', userSchema);
