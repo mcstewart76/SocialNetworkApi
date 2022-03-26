@@ -34,6 +34,10 @@ const userSchema = new Schema(
   }
 );
 
+userSchema.virtual('commentCount').get(function () {
+  return this.comments.length;
+});
+
 const User = model('user', userSchema);
 
 module.exports = User;
